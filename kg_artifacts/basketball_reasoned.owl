@@ -1,0 +1,520 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/basketball.owl"
+         xmlns="http://example.org/basketball.owl#"
+         xmlns:swrl="http://www.w3.org/2003/11/swrl#">
+
+<owl:Ontology rdf:about="http://example.org/basketball.owl"/>
+
+<owl:ObjectProperty rdf:about="#plays_for">
+  <rdfs:domain rdf:resource="#Player"/>
+  <rdfs:range rdf:resource="#Team"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#played_in">
+  <rdfs:domain rdf:resource="#Player"/>
+  <rdfs:range rdf:resource="#Game"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#scored_in">
+  <rdfs:domain rdf:resource="#Player"/>
+  <rdfs:range rdf:resource="#Game"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#played_against">
+  <rdfs:domain rdf:resource="#Game"/>
+  <rdfs:range rdf:resource="#Team"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#in_season">
+  <rdfs:domain rdf:resource="#Game"/>
+  <rdfs:range rdf:resource="#Season"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#teammate_of">
+  <rdfs:domain rdf:resource="#Player"/>
+  <rdfs:range rdf:resource="#Player"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#scored_against">
+  <rdfs:domain rdf:resource="#Player"/>
+  <rdfs:range rdf:resource="#Team"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Player">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Team">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Game">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Season">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#LeBron_James">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Lakers"/>
+  <played_in rdf:resource="#Game_G1"/>
+  <scored_in rdf:resource="#Game_G1"/>
+  <played_in rdf:resource="#Game_G2"/>
+  <scored_in rdf:resource="#Game_G2"/>
+  <played_in rdf:resource="#Game_G5"/>
+  <scored_in rdf:resource="#Game_G5"/>
+  <played_in rdf:resource="#Game_G8"/>
+  <scored_in rdf:resource="#Game_G8"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Lakers">
+  <rdf:type rdf:resource="#Team"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Warriors">
+  <rdf:type rdf:resource="#Team"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G1">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Warriors"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Lakers"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Season_2023">
+  <rdf:type rdf:resource="#Season"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Stephen_Curry">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Warriors"/>
+  <played_in rdf:resource="#Game_G1"/>
+  <scored_in rdf:resource="#Game_G1"/>
+  <played_in rdf:resource="#Game_G6"/>
+  <scored_in rdf:resource="#Game_G6"/>
+  <played_in rdf:resource="#Game_G9"/>
+  <scored_in rdf:resource="#Game_G9"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Anthony_Davis">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Lakers"/>
+  <played_in rdf:resource="#Game_G1"/>
+  <scored_in rdf:resource="#Game_G1"/>
+  <played_in rdf:resource="#Game_G5"/>
+  <scored_in rdf:resource="#Game_G5"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Klay_Thompson">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Warriors"/>
+  <played_in rdf:resource="#Game_G1"/>
+  <scored_in rdf:resource="#Game_G1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Kevin_Durant">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Suns"/>
+  <played_in rdf:resource="#Game_G2"/>
+  <scored_in rdf:resource="#Game_G2"/>
+  <played_in rdf:resource="#Game_G6"/>
+  <scored_in rdf:resource="#Game_G6"/>
+  <played_in rdf:resource="#Game_G10"/>
+  <scored_in rdf:resource="#Game_G10"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Suns">
+  <rdf:type rdf:resource="#Team"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G2">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Lakers"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Suns"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Devin_Booker">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Suns"/>
+  <played_in rdf:resource="#Game_G2"/>
+  <scored_in rdf:resource="#Game_G2"/>
+  <played_in rdf:resource="#Game_G10"/>
+  <scored_in rdf:resource="#Game_G10"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Austin_Reaves">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Lakers"/>
+  <played_in rdf:resource="#Game_G2"/>
+  <scored_in rdf:resource="#Game_G2"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Jayson_Tatum">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Celtics"/>
+  <played_in rdf:resource="#Game_G3"/>
+  <scored_in rdf:resource="#Game_G3"/>
+  <played_in rdf:resource="#Game_G7"/>
+  <scored_in rdf:resource="#Game_G7"/>
+  <played_in rdf:resource="#Game_G10"/>
+  <scored_in rdf:resource="#Game_G10"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Celtics">
+  <rdf:type rdf:resource="#Team"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bucks">
+  <rdf:type rdf:resource="#Team"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G3">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Bucks"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Celtics"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Jaylen_Brown">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Celtics"/>
+  <played_in rdf:resource="#Game_G3"/>
+  <scored_in rdf:resource="#Game_G3"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Giannis_Antetokounmpo">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Bucks"/>
+  <played_in rdf:resource="#Game_G3"/>
+  <scored_in rdf:resource="#Game_G3"/>
+  <played_in rdf:resource="#Game_G8"/>
+  <scored_in rdf:resource="#Game_G8"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Damian_Lillard">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Bucks"/>
+  <played_in rdf:resource="#Game_G3"/>
+  <scored_in rdf:resource="#Game_G3"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Nikola_Jokic">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Nuggets"/>
+  <played_in rdf:resource="#Game_G4"/>
+  <scored_in rdf:resource="#Game_G4"/>
+  <played_in rdf:resource="#Game_G5"/>
+  <scored_in rdf:resource="#Game_G5"/>
+  <played_in rdf:resource="#Game_G9"/>
+  <scored_in rdf:resource="#Game_G9"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Nuggets">
+  <rdf:type rdf:resource="#Team"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Mavericks">
+  <rdf:type rdf:resource="#Team"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G4">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Mavericks"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Nuggets"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Jamal_Murray">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Nuggets"/>
+  <played_in rdf:resource="#Game_G4"/>
+  <scored_in rdf:resource="#Game_G4"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Luka_Doncic">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Mavericks"/>
+  <played_in rdf:resource="#Game_G4"/>
+  <scored_in rdf:resource="#Game_G4"/>
+  <played_in rdf:resource="#Game_G7"/>
+  <scored_in rdf:resource="#Game_G7"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Kyrie_Irving">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Mavericks"/>
+  <played_in rdf:resource="#Game_G4"/>
+  <scored_in rdf:resource="#Game_G4"/>
+  <played_in rdf:resource="#Game_G7"/>
+  <scored_in rdf:resource="#Game_G7"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G5">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Nuggets"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Lakers"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Aaron_Gordon">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Nuggets"/>
+  <played_in rdf:resource="#Game_G5"/>
+  <scored_in rdf:resource="#Game_G5"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G6">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Suns"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Warriors"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Draymond_Green">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Warriors"/>
+  <played_in rdf:resource="#Game_G6"/>
+  <scored_in rdf:resource="#Game_G6"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bradley_Beal">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Suns"/>
+  <played_in rdf:resource="#Game_G6"/>
+  <scored_in rdf:resource="#Game_G6"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G7">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Mavericks"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Celtics"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Jrue_Holiday">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Celtics"/>
+  <played_in rdf:resource="#Game_G7"/>
+  <scored_in rdf:resource="#Game_G7"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G8">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Lakers"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Bucks"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bobby_Portis">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Bucks"/>
+  <played_in rdf:resource="#Game_G8"/>
+  <scored_in rdf:resource="#Game_G8"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#DAngelo_Russell">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Lakers"/>
+  <played_in rdf:resource="#Game_G8"/>
+  <scored_in rdf:resource="#Game_G8"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G9">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Nuggets"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Warriors"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Andrew_Wiggins">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Warriors"/>
+  <played_in rdf:resource="#Game_G9"/>
+  <scored_in rdf:resource="#Game_G9"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Michael_Porter_Jr.">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Nuggets"/>
+  <played_in rdf:resource="#Game_G9"/>
+  <scored_in rdf:resource="#Game_G9"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Game_G10">
+  <rdf:type rdf:resource="#Game"/>
+  <played_against rdf:resource="#Celtics"/>
+  <in_season rdf:resource="#Season_2023"/>
+  <played_against rdf:resource="#Suns"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Kristaps_Porzingis">
+  <rdf:type rdf:resource="#Player"/>
+  <plays_for rdf:resource="#Celtics"/>
+  <played_in rdf:resource="#Game_G10"/>
+  <scored_in rdf:resource="#Game_G10"/>
+</owl:NamedIndividual>
+
+<swrl:Variable rdf:about="urn:swrl#x"/>
+
+<swrl:Variable rdf:about="urn:swrl#t"/>
+
+<swrl:Variable rdf:about="urn:swrl#y"/>
+
+<swrl:Variable rdf:about="urn:swrl#g"/>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Player"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:ClassAtom>
+              <swrl:classPredicate rdf:resource="#Game"/>
+              <swrl:argument1 rdf:resource="urn:swrl#g"/>
+            </swrl:ClassAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:ClassAtom>
+                  <swrl:classPredicate rdf:resource="#Team"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#t"/>
+                </swrl:ClassAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:IndividualPropertyAtom>
+                      <swrl:propertyPredicate rdf:resource="#scored_in"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                      <swrl:argument2 rdf:resource="urn:swrl#g"/>
+                    </swrl:IndividualPropertyAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="#played_against"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#g"/>
+                          <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#scored_against"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+          <swrl:argument2 rdf:resource="urn:swrl#t"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+<swrl:Imp>
+  <swrl:body>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:ClassAtom>
+          <swrl:classPredicate rdf:resource="#Player"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+        </swrl:ClassAtom>
+      </rdf:first>
+      <rdf:rest>
+        <rdf:Description>
+          <rdf:first>
+            <swrl:ClassAtom>
+              <swrl:classPredicate rdf:resource="#Team"/>
+              <swrl:argument1 rdf:resource="urn:swrl#t"/>
+            </swrl:ClassAtom>
+          </rdf:first>
+          <rdf:rest>
+            <rdf:Description>
+              <rdf:first>
+                <swrl:IndividualPropertyAtom>
+                  <swrl:propertyPredicate rdf:resource="#plays_for"/>
+                  <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                  <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                </swrl:IndividualPropertyAtom>
+              </rdf:first>
+              <rdf:rest>
+                <rdf:Description>
+                  <rdf:first>
+                    <swrl:ClassAtom>
+                      <swrl:classPredicate rdf:resource="#Player"/>
+                      <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                    </swrl:ClassAtom>
+                  </rdf:first>
+                  <rdf:rest>
+                    <rdf:Description>
+                      <rdf:first>
+                        <swrl:IndividualPropertyAtom>
+                          <swrl:propertyPredicate rdf:resource="#plays_for"/>
+                          <swrl:argument1 rdf:resource="urn:swrl#y"/>
+                          <swrl:argument2 rdf:resource="urn:swrl#t"/>
+                        </swrl:IndividualPropertyAtom>
+                      </rdf:first>
+                      <rdf:rest>
+                        <rdf:Description>
+                          <rdf:first>
+                            <swrl:DifferentIndividualsAtom>
+                              <swrl:argument1 rdf:resource="urn:swrl#x"/>
+                              <swrl:argument2 rdf:resource="urn:swrl#y"/>
+                            </swrl:DifferentIndividualsAtom>
+                          </rdf:first>
+                          <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                        </rdf:Description>
+                      </rdf:rest>
+                    </rdf:Description>
+                  </rdf:rest>
+                </rdf:Description>
+              </rdf:rest>
+            </rdf:Description>
+          </rdf:rest>
+        </rdf:Description>
+      </rdf:rest>
+    </rdf:Description>
+  </swrl:body>
+  <swrl:head>
+    <rdf:Description>
+      <rdf:first>
+        <swrl:IndividualPropertyAtom>
+          <swrl:propertyPredicate rdf:resource="#teammate_of"/>
+          <swrl:argument1 rdf:resource="urn:swrl#x"/>
+          <swrl:argument2 rdf:resource="urn:swrl#y"/>
+        </swrl:IndividualPropertyAtom>
+      </rdf:first>
+      <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+    </rdf:Description>
+  </swrl:head>
+</swrl:Imp>
+
+
+</rdf:RDF>

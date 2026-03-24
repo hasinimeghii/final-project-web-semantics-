@@ -1,0 +1,10 @@
+rdflib==7.0.0
+owlready2==0.45
+pykeen==1.10.2
+torch
+pandas
+ollama
+scikit-learn
+matplotlib
+jupyter
+tqdm

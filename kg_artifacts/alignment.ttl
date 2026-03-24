@@ -1,0 +1,68 @@
+@prefix dbp: <http://dbpedia.org/resource/> .
+@prefix ex: <http://example.org/basketball#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+ex:Aaron_Gordon owl:sameAs dbp:Aaron_Gordon .
+
+ex:Andrew_Wiggins owl:sameAs dbp:Andrew_Wiggins .
+
+ex:Anthony_Davis owl:sameAs dbp:Anthony_Davis .
+
+ex:Austin_Reaves owl:sameAs dbp:Austin_Reaves .
+
+ex:Bobby_Portis owl:sameAs dbp:Bobby_Portis .
+
+ex:Bradley_Beal owl:sameAs dbp:Bradley_Beal .
+
+ex:Bucks owl:sameAs dbp:Bucks_\(basketball\) .
+
+ex:Celtics owl:sameAs dbp:Celtics_\(basketball\) .
+
+<http://example.org/basketball#D'Angelo_Russell> owl:sameAs <http://dbpedia.org/resource/D'Angelo_Russell> .
+
+ex:Damian_Lillard owl:sameAs dbp:Damian_Lillard .
+
+ex:Devin_Booker owl:sameAs dbp:Devin_Booker .
+
+ex:Draymond_Green owl:sameAs dbp:Draymond_Green .
+
+ex:Giannis_Antetokounmpo owl:sameAs dbp:Giannis_Antetokounmpo .
+
+ex:Jamal_Murray owl:sameAs dbp:Jamal_Murray .
+
+ex:Jaylen_Brown owl:sameAs dbp:Jaylen_Brown .
+
+ex:Jayson_Tatum owl:sameAs dbp:Jayson_Tatum .
+
+ex:Jrue_Holiday owl:sameAs dbp:Jrue_Holiday .
+
+ex:Kevin_Durant owl:sameAs dbp:Kevin_Durant .
+
+ex:Klay_Thompson owl:sameAs dbp:Klay_Thompson .
+
+ex:Kristaps_Porzingis owl:sameAs dbp:Kristaps_Porzingis .
+
+ex:Kyrie_Irving owl:sameAs dbp:Kyrie_Irving .
+
+ex:Lakers owl:sameAs dbp:Lakers_\(basketball\) .
+
+ex:LeBron_James owl:sameAs dbp:LeBron_James .
+
+ex:Luka_Doncic owl:sameAs dbp:Luka_Doncic .
+
+ex:Mavericks owl:sameAs dbp:Mavericks_\(basketball\) .
+
+<http://example.org/basketball#Michael_Porter_Jr.> owl:sameAs <http://dbpedia.org/resource/Michael_Porter_Jr.> .
+
+ex:Nikola_Jokic owl:sameAs dbp:Nikola_Jokic .
+
+ex:Nuggets owl:sameAs dbp:Nuggets_\(basketball\) .
+
+ex:Stephen_Curry owl:sameAs dbp:Stephen_Curry .
+
+ex:Suns owl:sameAs dbp:Suns_\(basketball\) .
+
+ex:Warriors owl:sameAs dbp:Warriors_\(basketball\) .
+
+ex:plays_for owl:equivalentProperty dbp:memberOf .
+
