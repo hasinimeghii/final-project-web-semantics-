@@ -8,7 +8,7 @@ class BasketballRAG:
         self.g.parse(onto_path, format="application/rdf+xml")
         self.schema_summary = """
         Prefix: ex: <http://example.org/basketball#>
-        Classes: Player, Team, Game, Season
+        Classes: Player, Team, Game, Season, Coach, Arena
         Properties:
         - plays_for(Player, Team)
         - played_in(Player, Game)
@@ -17,6 +17,13 @@ class BasketballRAG:
         - in_season(Game, Season)
         - teammate_of(Player, Player)
         - scored_against(Player, Team)
+        - coached_by(Team, Coach)
+        - plays_in(Team, Arena)
+        - scored_points(Player, xsd:integer)
+
+        Example filters:
+        - To filter by season: `?game ex:in_season ex:Season_2023 .`
+        - To filter by score > 30: `?player ex:scored_points ?points . FILTER(?points > 30)`
         """
         self.model = 'llama3' # ensure user has llama3 installed via ollama run llama3
         
