@@ -7,7 +7,7 @@ class BasketballRAG:
         self.g = rdflib.Graph()
         self.g.parse(onto_path, format="application/rdf+xml")
         self.schema_summary = """
-        Prefix: ex: <http://example.org/basketball.owl#>
+        Prefix: ex: <http://example.org/basketball#>
         Classes: Player, Team, Game, Season
         Properties:
         - plays_for(Player, Team)
@@ -35,14 +35,19 @@ class BasketballRAG:
             response = ollama.chat(model=self.model, messages=[{'role': 'user', 'content': prompt}])
             query = response['message']['content'].strip()
             # Clean up potential markdown formatting from LLM
-            if query.startswith("```sparql"):
-                query = query[9:]
-            if query.startswith("```"):
-                query = query[3:]
-            if query.endswith("```"):
-                query = query[:-3]
-            return query.strip()
+            match = re.search(r'```(?:sparql)?(.*?)```', query, re.DOTALL | re.IGNORECASE)
+            if match:
+                query = match.group(1).strip()
+            else:
+                # Remove inline backticks if any
+                query = query.replace('`', '').strip()
+                
+            if "prefix ex:" not in query.lower():
+                query = "PREFIX ex: <http://example.org/basketball#>\n" + query
+                
+            return query
         except Exception as e:
+            print(f"LLM Error: {e}")
             return None
             
     def execute_query(self, query):
@@ -94,4 +99,21 @@ def evaluate_rag():
         print(f"Answer: {res}\n")
 
 if __name__ == "__main__":
-    evaluate_rag()
+    import sys
+    if len(sys.argv) > 1 and sys.argv[1] == "--cli":
+        rag = BasketballRAG("kg_artifacts/basketball_reasoned.owl")
+        print("Welcome to the Basketball KG QA System (Type 'exit' to quit)")
+        print("Model: llama3 via Ollama")
+        while True:
+            try:
+                q = input("\nAsk a question: ")
+                if q.strip().lower() in ['exit', 'quit']:
+                    break
+                if not q.strip():
+                    continue
+                res = rag.answer_question(q)
+                print(f"Answer: {res}")
+            except KeyboardInterrupt:
+                break
+    else:
+        evaluate_rag()
