@@ -1,75 +1,92 @@
 @prefix ex: <http://example.org/basketball#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 ex:Aaron_Gordon a ex:Player ;
     ex:played_in ex:Game_G5 ;
     ex:plays_for ex:Nuggets ;
-    ex:scored_in ex:Game_G5 .
+    ex:scored_in ex:Game_G5 ;
+    ex:scored_points 18 .
 
 ex:Andrew_Wiggins a ex:Player ;
     ex:played_in ex:Game_G9 ;
     ex:plays_for ex:Warriors ;
-    ex:scored_in ex:Game_G9 .
+    ex:scored_in ex:Game_G9 ;
+    ex:scored_points 15 .
 
 ex:Anthony_Davis a ex:Player ;
     ex:played_in ex:Game_G1,
         ex:Game_G5 ;
     ex:plays_for ex:Lakers ;
     ex:scored_in ex:Game_G1,
-        ex:Game_G5 .
+        ex:Game_G5 ;
+    ex:scored_points 24,
+        25 .
 
 ex:Austin_Reaves a ex:Player ;
     ex:played_in ex:Game_G2 ;
     ex:plays_for ex:Lakers ;
-    ex:scored_in ex:Game_G2 .
+    ex:scored_in ex:Game_G2 ;
+    ex:scored_points 15 .
 
 ex:Bobby_Portis a ex:Player ;
     ex:played_in ex:Game_G8 ;
     ex:plays_for ex:Bucks ;
-    ex:scored_in ex:Game_G8 .
+    ex:scored_in ex:Game_G8 ;
+    ex:scored_points 16 .
 
 ex:Bradley_Beal a ex:Player ;
     ex:played_in ex:Game_G6 ;
     ex:plays_for ex:Suns ;
-    ex:scored_in ex:Game_G6 .
+    ex:scored_in ex:Game_G6 ;
+    ex:scored_points 20 .
 
 <http://example.org/basketball#D'Angelo_Russell> a ex:Player ;
     ex:played_in ex:Game_G8 ;
     ex:plays_for ex:Lakers ;
-    ex:scored_in ex:Game_G8 .
+    ex:scored_in ex:Game_G8 ;
+    ex:scored_points 20 .
 
 ex:Damian_Lillard a ex:Player ;
     ex:played_in ex:Game_G3 ;
     ex:plays_for ex:Bucks ;
-    ex:scored_in ex:Game_G3 .
+    ex:scored_in ex:Game_G3 ;
+    ex:scored_points 24 .
 
 ex:Devin_Booker a ex:Player ;
     ex:played_in ex:Game_G10,
         ex:Game_G2 ;
     ex:plays_for ex:Suns ;
     ex:scored_in ex:Game_G10,
-        ex:Game_G2 .
+        ex:Game_G2 ;
+    ex:scored_points 25,
+        32 .
 
 ex:Draymond_Green a ex:Player ;
     ex:played_in ex:Game_G6 ;
     ex:plays_for ex:Warriors ;
-    ex:scored_in ex:Game_G6 .
+    ex:scored_in ex:Game_G6 ;
+    ex:scored_points 10 .
 
 ex:Giannis_Antetokounmpo a ex:Player ;
     ex:played_in ex:Game_G3,
         ex:Game_G8 ;
     ex:plays_for ex:Bucks ;
     ex:scored_in ex:Game_G3,
-        ex:Game_G8 .
+        ex:Game_G8 ;
+    ex:scored_points 38,
+        40 .
 
 ex:Jamal_Murray a ex:Player ;
     ex:played_in ex:Game_G4 ;
     ex:plays_for ex:Nuggets ;
-    ex:scored_in ex:Game_G4 .
+    ex:scored_in ex:Game_G4 ;
+    ex:scored_points 26 .
 
 ex:Jaylen_Brown a ex:Player ;
     ex:played_in ex:Game_G3 ;
     ex:plays_for ex:Celtics ;
-    ex:scored_in ex:Game_G3 .
+    ex:scored_in ex:Game_G3 ;
+    ex:scored_points 29 .
 
 ex:Jayson_Tatum a ex:Player ;
     ex:played_in ex:Game_G10,
@@ -78,12 +95,16 @@ ex:Jayson_Tatum a ex:Player ;
     ex:plays_for ex:Celtics ;
     ex:scored_in ex:Game_G10,
         ex:Game_G3,
-        ex:Game_G7 .
+        ex:Game_G7 ;
+    ex:scored_points 30,
+        31,
+        34 .
 
 ex:Jrue_Holiday a ex:Player ;
     ex:played_in ex:Game_G7 ;
     ex:plays_for ex:Celtics ;
-    ex:scored_in ex:Game_G7 .
+    ex:scored_in ex:Game_G7 ;
+    ex:scored_points 18 .
 
 ex:Kevin_Durant a ex:Player ;
     ex:played_in ex:Game_G10,
@@ -92,24 +113,31 @@ ex:Kevin_Durant a ex:Player ;
     ex:plays_for ex:Suns ;
     ex:scored_in ex:Game_G10,
         ex:Game_G2,
-        ex:Game_G6 .
+        ex:Game_G6 ;
+    ex:scored_points 25,
+        27,
+        31 .
 
 ex:Klay_Thompson a ex:Player ;
     ex:played_in ex:Game_G1 ;
     ex:plays_for ex:Warriors ;
-    ex:scored_in ex:Game_G1 .
+    ex:scored_in ex:Game_G1 ;
+    ex:scored_points 22 .
 
 ex:Kristaps_Porzingis a ex:Player ;
     ex:played_in ex:Game_G10 ;
     ex:plays_for ex:Celtics ;
-    ex:scored_in ex:Game_G10 .
+    ex:scored_in ex:Game_G10 ;
+    ex:scored_points 21 .
 
 ex:Kyrie_Irving a ex:Player ;
     ex:played_in ex:Game_G4,
         ex:Game_G7 ;
     ex:plays_for ex:Mavericks ;
     ex:scored_in ex:Game_G4,
-        ex:Game_G7 .
+        ex:Game_G7 ;
+    ex:scored_points 22,
+        25 .
 
 ex:LeBron_James a ex:Player ;
     ex:played_in ex:Game_G1,
@@ -120,19 +148,26 @@ ex:LeBron_James a ex:Player ;
     ex:scored_in ex:Game_G1,
         ex:Game_G2,
         ex:Game_G5,
-        ex:Game_G8 .
+        ex:Game_G8 ;
+    ex:scored_points 27,
+        28,
+        30,
+        32 .
 
 ex:Luka_Doncic a ex:Player ;
     ex:played_in ex:Game_G4,
         ex:Game_G7 ;
     ex:plays_for ex:Mavericks ;
     ex:scored_in ex:Game_G4,
-        ex:Game_G7 .
+        ex:Game_G7 ;
+    ex:scored_points 33,
+        45 .
 
 <http://example.org/basketball#Michael_Porter_Jr.> a ex:Player ;
     ex:played_in ex:Game_G9 ;
     ex:plays_for ex:Nuggets ;
-    ex:scored_in ex:Game_G9 .
+    ex:scored_in ex:Game_G9 ;
+    ex:scored_points 19 .
 
 ex:Nikola_Jokic a ex:Player ;
     ex:played_in ex:Game_G4,
@@ -141,7 +176,10 @@ ex:Nikola_Jokic a ex:Player ;
     ex:plays_for ex:Nuggets ;
     ex:scored_in ex:Game_G4,
         ex:Game_G5,
-        ex:Game_G9 .
+        ex:Game_G9 ;
+    ex:scored_points 30,
+        32,
+        35 .
 
 ex:Stephen_Curry a ex:Player ;
     ex:played_in ex:Game_G1,
@@ -150,19 +188,62 @@ ex:Stephen_Curry a ex:Player ;
     ex:plays_for ex:Warriors ;
     ex:scored_in ex:Game_G1,
         ex:Game_G6,
-        ex:Game_G9 .
+        ex:Game_G9 ;
+    ex:scored_points 28,
+        29,
+        35 .
 
-ex:Mavericks a ex:Team .
+ex:Adrian_Griffin a ex:Coach .
 
-ex:Bucks a ex:Team .
+ex:American_Airlines_Center a ex:Arena .
 
-ex:Suns a ex:Team .
+ex:Ball_Arena a ex:Arena .
 
-ex:Celtics a ex:Team .
+ex:Chase_Center a ex:Arena .
 
-ex:Nuggets a ex:Team .
+ex:Crypto.com_Arena a ex:Arena .
 
-ex:Warriors a ex:Team .
+ex:Darvin_Ham a ex:Coach .
+
+ex:Fiserv_Forum a ex:Arena .
+
+ex:Footprint_Center a ex:Arena .
+
+ex:Frank_Vogel a ex:Coach .
+
+ex:Jason_Kidd a ex:Coach .
+
+ex:Joe_Mazzulla a ex:Coach .
+
+ex:Michael_Malone a ex:Coach .
+
+ex:Steve_Kerr a ex:Coach .
+
+ex:TD_Garden a ex:Arena .
+
+ex:Mavericks a ex:Team ;
+    ex:coached_by ex:Jason_Kidd ;
+    ex:plays_in ex:American_Airlines_Center .
+
+ex:Bucks a ex:Team ;
+    ex:coached_by ex:Adrian_Griffin ;
+    ex:plays_in ex:Fiserv_Forum .
+
+ex:Suns a ex:Team ;
+    ex:coached_by ex:Frank_Vogel ;
+    ex:plays_in ex:Footprint_Center .
+
+ex:Celtics a ex:Team ;
+    ex:coached_by ex:Joe_Mazzulla ;
+    ex:plays_in ex:TD_Garden .
+
+ex:Nuggets a ex:Team ;
+    ex:coached_by ex:Michael_Malone ;
+    ex:plays_in ex:Ball_Arena .
+
+ex:Warriors a ex:Team ;
+    ex:coached_by ex:Steve_Kerr ;
+    ex:plays_in ex:Chase_Center .
 
 ex:Game_G1 a ex:Game ;
     ex:in_season ex:Season_2023 ;
@@ -214,7 +295,9 @@ ex:Game_G9 a ex:Game ;
     ex:played_against ex:Nuggets,
         ex:Warriors .
 
-ex:Lakers a ex:Team .
+ex:Lakers a ex:Team ;
+    ex:coached_by ex:Darvin_Ham ;
+    ex:plays_in ex:Crypto.com_Arena .
 
 ex:Season_2023 a ex:Season .
 
