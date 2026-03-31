@@ -36,7 +36,7 @@ class BasketballRAG:
             prompt += "Please fix the SPARQL query.\n"
             
         prompt += f"Question: {question}\n\n"
-        prompt += "IMPORTANT: Return ONLY the raw SPARQL query, starting with PREFIX and SELECT. Do not include markdown blocks or any other explanation."
+        prompt += "IMPORTANT: Return ONLY the raw SPARQL query, starting with PREFIX and SELECT. Do not include markdown blocks or any other explanation. Ensure the query is perfectly closed with '}'.\n"
         
         try:
             response = ollama.chat(model=self.model, messages=[{'role': 'user', 'content': prompt}])
@@ -51,6 +51,10 @@ class BasketballRAG:
                 
             if "prefix ex:" not in query.lower():
                 query = "PREFIX ex: <http://example.org/basketball#>\n" + query
+                
+            # Fallback guardrail: if the model cuts off the closing brace
+            if query.count('{') > query.count('}'):
+                query += "\n}"
                 
             return query
         except Exception as e:
