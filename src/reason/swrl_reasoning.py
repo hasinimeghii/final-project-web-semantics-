@@ -4,7 +4,7 @@ import os
 
 def build_and_reason(csv_path: str, out_owl: str):
     onto_path.append("kg_artifacts")
-    onto = get_ontology("http://example.org/basketball.owl")
+    onto = get_ontology("http://example.org/basketball#")
 
     with onto:
         # Define Classes
